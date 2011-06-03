@@ -1,0 +1,10 @@
+out_to_console yes
+out_to_x no
+total_run_times 0
+no_buffers yes
+update_interval 1
+uppercase no
+if_up_strictness address
+
+TEXT
+${time %H:%M} noch: ${battery_time} ^fg(blue) UP ${upspeed wlan0}k/s(${totalup wlan0}) ^fg()  ^fg(\#ff9900) DOWN ${downspeed wlan0}k/s(${totaldown wlan0}) ^fg()

@@ -1,0 +1,126 @@
+
+# This configuration uses Mod1 and Mod3. Make sure they are mapped properly using xev(1)
+# and xmodmap(1). Usually, Mod1 is Alt (Alt_L) and Mod3 is Windows (Super_L)
+
+# ISO 10646 = Unicode
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+exec conky -c ~/.i3/conky | i3-wsbar -c "dzen2 -x %x -dock -fn -*-profont-*-*-*-*-11-*-*-*-*-*-*-* -ta l"
+#exec conky -c ~/.i3/conky | i3-wsbar -c "dzen2 -x %x -dock -fn -*-profont-*-*-*-*-11-*-*-*-*-*-*-* -ta l"
+workspace_bar no
+
+# Use Mouse+Mod1 to drag floating windows to their wanted position
+floating_modifier Mod4
+
+# Fullscreen (Mod1+f)
+bind Mod4+41 f
+
+# Stacking (Mod1+h)
+bind Mod1+43 s
+
+# Default (Mod1+e)
+bind Mod1+26 d
+
+# Toggle tiling/floating of the current window (Mod1+Shift+Space)
+bind Mod1+Shift+65 t
+
+# Go into the tiling layer / floating layer, depending on whether
+# the current window is tiling / floating (Mod1+t)
+bind Mod1+28 focus ft
+
+# Focus (Mod1+j/k/l/;)
+bind Mod1+44 h
+bind Mod1+45 j
+bind Mod1+46 k
+bind Mod1+47 l
+# (alternatively, you can use the cursor keys:)
+bindsym Mod1+Left h
+bindsym Mod1+Down j
+bindsym Mod1+Up k
+bindsym Mod1+Right l
+
+# Move (Mod1+Shift+j/k/l/;)
+bind Mod1+Shift+44 mh
+bind Mod1+Shift+45 mj
+bind Mod1+Shift+46 mk
+bind Mod1+Shift+47 ml
+
+#### Windows ####
+
+# New console
+bindsym Mod4+Return exec /usr/bin/urxvt
+
+
+# Move container
+bindsym Mod3+Shift+j wcmh
+bindsym Mod3+Shift+k wcmj
+bindsym Mod3+Shift+l wcmk
+bindsym Mod3+Shift+; wcml
+
+# Focus Container (Mod3+j/k/l/;)
+bind Mod3+44 wch
+bind Mod3+45 wcj
+bind Mod3+46 wck
+bind Mod3+47 wcl
+# (alternatively, you can use the cursor keys:)
+bindsym Mod3+Left wch
+bindsym Mod3+Down wcj
+bindsym Mod3+Up wck
+bindsym Mod3+Right wcl
+
+#### #### #### ####
+
+#### Workspaces ####
+
+# Naming
+workspace 1 www
+workspace 2 mail
+workspace 3 chat
+workspace 4 dev
+
+
+# Workspaces
+bindsym Mod4+1 1
+bindsym Mod4+2 2
+bindsym Mod4+3 3
+bindsym Mod4+4 4
+bindsym Mod4+5 5
+bindsym Mod4+6 6
+bindsym Mod4+7 7
+bindsym Mod4+8 8
+bindsym Mod4+9 9
+bindsym Mod4+0 10
+
+# Move to Workspaces
+bindsym Mod4+Shift+1 m1
+bindsym Mod4+Shift+2 m2
+bindsym Mod4+Shift+3 m3
+bindsym Mod4+Shift+4 m4
+bindsym Mod4+Shift+5 m5
+bindsym Mod4+Shift+6 m6
+bindsym Mod4+Shift+7 m7
+bindsym Mod4+Shift+8 m8
+bindsym Mod4+Shift+9 m9
+bindsym Mod4+Shift+0 m10
+
+#### #### #### ####
+
+
+
+
+# Mod1+Shift+q kills the current client
+bindsym Mod4+Shift+c kill
+
+# Mod1+v starts dmenu and launches the selected application
+# for now, we don’t have a launcher of our own.
+bindsym Mod4+p exec /usr/bin/dmenu_run
+
+# Mod1+Shift+e exits i3
+bind Mod1+Shift+26 exit
+
+# Mod1+Shift+r restarts i3 inplace
+bindsym Mod4+Shift+r restart
+
+# The IPC interface allows programs like an external workspace bar
+# (i3-wsbar) or i3-msg (can be used to "remote-control" i3) to work.
+ipc-socket ~/.i3/ipc.sock
