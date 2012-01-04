@@ -1,126 +1,148 @@
+# 
+set $mod Mod4
 
-# This configuration uses Mod1 and Mod3. Make sure they are mapped properly using xev(1)
-# and xmodmap(1). Usually, Mod1 is Alt (Alt_L) and Mod3 is Windows (Super_L)
-
-# ISO 10646 = Unicode
+# font for window titles. ISO 10646 = Unicode
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
-exec conky -c ~/.i3/conky | i3-wsbar -c "dzen2 -x %x -dock -fn -*-profont-*-*-*-*-11-*-*-*-*-*-*-* -ta l"
-#exec conky -c ~/.i3/conky | i3-wsbar -c "dzen2 -x %x -dock -fn -*-profont-*-*-*-*-11-*-*-*-*-*-*-* -ta l"
-workspace_bar no
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
 
-# Use Mouse+Mod1 to drag floating windows to their wanted position
-floating_modifier Mod4
+# start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
 
-# Fullscreen (Mod1+f)
-bind Mod4+41 f
+# kill focused window
+bindsym $mod+Shift+C kill
 
-# Stacking (Mod1+h)
-bind Mod1+43 s
+# start dmenu (a program launcher)
+bindsym $mod+p exec dmenu_run
 
-# Default (Mod1+e)
-bind Mod1+26 d
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+odiaeresis focus right
 
-# Toggle tiling/floating of the current window (Mod1+Shift+Space)
-bind Mod1+Shift+65 t
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
-# Go into the tiling layer / floating layer, depending on whether
-# the current window is tiling / floating (Mod1+t)
-bind Mod1+28 focus ft
+# move focused window
+bindsym $mod+Shift+J move left
+bindsym $mod+Shift+K move down
+bindsym $mod+Shift+L move up
+bindsym $mod+Shift+Odiaeresis move right
 
-# Focus (Mod1+j/k/l/;)
-bind Mod1+44 h
-bind Mod1+45 j
-bind Mod1+46 k
-bind Mod1+47 l
-# (alternatively, you can use the cursor keys:)
-bindsym Mod1+Left h
-bindsym Mod1+Down j
-bindsym Mod1+Up k
-bindsym Mod1+Right l
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
-# Move (Mod1+Shift+j/k/l/;)
-bind Mod1+Shift+44 mh
-bind Mod1+Shift+45 mj
-bind Mod1+Shift+46 mk
-bind Mod1+Shift+47 ml
+# split in horizontal orientation
+bindsym $mod+h split h
 
-#### Windows ####
+# split in vertical orientation
+bindsym $mod+v split v
 
-# New console
-bindsym Mod4+Return exec /usr/bin/urxvt
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
 
+# change container layout (stacked, tabbed, default)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout default
 
-# Move container
-bindsym Mod3+Shift+j wcmh
-bindsym Mod3+Shift+k wcmj
-bindsym Mod3+Shift+l wcmk
-bindsym Mod3+Shift+; wcml
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
 
-# Focus Container (Mod3+j/k/l/;)
-bind Mod3+44 wch
-bind Mod3+45 wcj
-bind Mod3+46 wck
-bind Mod3+47 wcl
-# (alternatively, you can use the cursor keys:)
-bindsym Mod3+Left wch
-bindsym Mod3+Down wcj
-bindsym Mod3+Up wck
-bindsym Mod3+Right wcl
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
 
-#### #### #### ####
+# focus the parent container
+bindsym $mod+a focus parent
 
-#### Workspaces ####
+# focus the child container
+#bindcode $mod+d focus child
 
-# Naming
-workspace 1 www
-workspace 2 mail
-workspace 3 chat
-workspace 4 dev
+workspace 1 "www"
+workspace 2 "mail"
+workspace 3 "chat" 
+workspace 4 "dev"
 
 
-# Workspaces
-bindsym Mod4+1 1
-bindsym Mod4+2 2
-bindsym Mod4+3 3
-bindsym Mod4+4 4
-bindsym Mod4+5 5
-bindsym Mod4+6 6
-bindsym Mod4+7 7
-bindsym Mod4+8 8
-bindsym Mod4+9 9
-bindsym Mod4+0 10
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
 
-# Move to Workspaces
-bindsym Mod4+Shift+1 m1
-bindsym Mod4+Shift+2 m2
-bindsym Mod4+Shift+3 m3
-bindsym Mod4+Shift+4 m4
-bindsym Mod4+Shift+5 m5
-bindsym Mod4+Shift+6 m6
-bindsym Mod4+Shift+7 m7
-bindsym Mod4+Shift+8 m8
-bindsym Mod4+Shift+9 m9
-bindsym Mod4+Shift+0 m10
+# move focused container to workspace
+bindsym $mod+Shift+exclam move workspace 1
+bindsym $mod+Shift+quotedbl move workspace 2
+bindsym $mod+Shift+section move workspace 3
+bindsym $mod+Shift+dollar move workspace 4
+bindsym $mod+Shift+percent move workspace 5
+bindsym $mod+Shift+ampersand move workspace 6
+bindsym $mod+Shift+slash move workspace 7
+bindsym $mod+Shift+parenleft move workspace 8
+bindsym $mod+Shift+parenright move workspace 9
+bindsym $mod+Shift+equal move workspace 10
 
-#### #### #### ####
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+R restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+E exit
 
+# resize window (you can also us1 the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
 
+        # They resize the border in the direction you pressed, e.g.
+        # when pressing left, the window is resized so that it has
+        # more space on its left
 
+bindsym j resize shrink left 10 px or 10 ppt
+bindsym Shift+J resize grow   left 10 px or 10 ppt
 
-# Mod1+Shift+q kills the current client
-bindsym Mod4+Shift+c kill
+bindsym k resize shrink down 10 px or 10 ppt
+bindsym Shift+K resize grow   down 10 px or 10 ppt
 
-# Mod1+v starts dmenu and launches the selected application
-# for now, we don’t have a launcher of our own.
-bindsym Mod4+p exec /usr/bin/dmenu_run
+bindsym l resize shrink up 10 px or 10 ppt
+bindsym Shift+L resize grow   up 10 px or 10 ppt
 
-# Mod1+Shift+e exits i3
-bind Mod1+Shift+26 exit
+bindsym odiaeresis resize shrink right 10 px or 10 ppt
+bindsym Shift+Odiaeresis resize grow   right 10 px or 10 ppt
 
-# Mod1+Shift+r restarts i3 inplace
-bindsym Mod4+Shift+r restart
+        # same bindings, but for the arrow keys
+bindsym Left resize shrink left 10 px or 10 ppt
+bindsym Shift+Left resize grow   left 10 px or 10 ppt
 
-# The IPC interface allows programs like an external workspace bar
-# (i3-wsbar) or i3-msg (can be used to "remote-control" i3) to work.
-ipc-socket ~/.i3/ipc.sock
+bindsym Down resize shrink down 10 px or 10 ppt
+bindsym Shift+Down resize grow   down 10 px or 10 ppt
+
+bindsym Up resize shrink up 10 px or 10 ppt
+bindsym Shift+Up resize grow   up 10 px or 10 ppt
+
+bindsym Right resize shrink right 10 px or 10 ppt
+bindsym Shift+Right resize grow   right 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+bindsym Return mode "default"
+bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+	status_command i3status
+}

@@ -6,6 +6,6 @@ URxvt.background: black
 URxvt.secondaryScroll: true
 !URxvt.font: xft:Bitstream Vera Sans Mono:pixelsize=12
 !URxvt*font: -*-profont-*-*-*-*-11-*-*-*-*-*-iso8859-*
-URxvt.font: xft:ProFont:pixelsize=11
+URxvt.font: xft:ProFont:pixelsize=13
 URxvt.perl-ext-common: mark-urls
 URxvt.urlLauncher: chromium
