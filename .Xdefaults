@@ -1,11 +1,36 @@
+! fonts
+URxvt.font: xft:Monofur:pixelsize=16
+Xft.dpi: 96
+Xft.antialias: true
+Xft.rgba: rgb
+Xft.hinting: false
+Xft.hinstyle: hintfull
+Xft.lcdfilter: lcddefault
+URxvt*xftAntialias: true
+
 ! urxvt einstellungen
 URxvt.saveLines: 10000
-URxvt.scrollBar: false
+URxvt.scrollBar: true
 URxvt.foreground: white
-URxvt.background: black
+URxvt.background: #2B2B2B
 URxvt.secondaryScroll: true
-!URxvt.font: xft:Bitstream Vera Sans Mono:pixelsize=12
-!URxvt*font: -*-profont-*-*-*-*-11-*-*-*-*-*-iso8859-*
-URxvt.font: xft:ProFont:pixelsize=13
+
 URxvt.perl-ext-common: mark-urls
 URxvt.urlLauncher: chromium
+
+
+
+URxvt.loginShell: true
+URxvt*termName:rxvt-unicode-256color
+
+
+urxvt.perl-ext-common: default,matcher,clipboard,url-select,keyboard-select
+URxvt.url-launcher: /usr/bin/chromium
+
+URxvt.keysym.Shift-Control-C : perl:clipboard:copy
+URxvt.keysym.Shift-Control-V : perl:clipboard:paste
+URxvt.url-select.launcher: chromium
+URxvt.url-select.underline: true
+
+urxvt*depth: 32
+urxvt*background: rgba:0200/0200/0200/a000

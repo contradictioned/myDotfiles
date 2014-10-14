@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/manuel/Repos/fsGoodLook/.sass-cache'
+let g:netrw_dirhist_2='/opt/Isabelle2013-2/bin'
+let g:netrw_dirhist_3='/home/manuel/.bash-git-prompt'
+let g:netrw_dirhist_4='/home/manuel/temp/ewoche-website/ewoche'

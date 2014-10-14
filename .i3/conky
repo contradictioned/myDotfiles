@@ -6,5 +6,19 @@ update_interval 1
 uppercase no
 if_up_strictness address
 
+# Rainbow from purple to yellow, thx to http://colrd.com/palette/22296/?download=css
+#   #772277 #333388 #1144aa #55aa11 #f40000 #f47a00 #ffe314 #feffff
+
+
 TEXT
-${time %H:%M} noch: ${battery_time} ^fg(blue) UP ${upspeed wlan0}k/s(${totalup wlan0}) ^fg()  ^fg(\#ff9900) DOWN ${downspeed wlan0}k/s(${totaldown wlan0}) ^fg()
+[
+  {"full_text": "Shit", "color": "\#772277"},
+  {"full_text": "Lorem Ipsum", "color": "\#333388"},
+  {"full_text": "Lorem Ipsum 2", "color": "\#1144aa"},
+  {"full_text": "Load ${loadavg 1} Memperc ${mem} : ${memmax}", "color": "\#55aa11"},
+  {"full_text": "WIRE ${if_up net0}${addr net0}${endif}", "color": "\#f40000"},
+  {"full_text": "WIRELESS ${if_up wifi0}${addr wifi0}${endif}", "color": "\#f47a00"},
+  {"full_text": "${time %T} Uhr", "color": "\#ffe314"},
+  {"full_text": "${time %e.%b}", "color": "\#ffe314"},
+  {"full_text": "${battery_short} ${battery_percent} %", "color": "\#feffff"}
+ ],
