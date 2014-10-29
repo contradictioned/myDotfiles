@@ -19,6 +19,6 @@ TEXT
   {"full_text": "WIRE ${if_up net0}${addr net0}${endif}", "color": "\#f40000"},
   {"full_text": "WIRELESS ${if_up wifi0}${addr wifi0}${endif}", "color": "\#f47a00"},
   {"full_text": "${time %T} Uhr", "color": "\#ffe314"},
-  {"full_text": "${time %e.%b}", "color": "\#ffe314"},
-  {"full_text": "${battery_short} ${battery_percent} %", "color": "\#feffff"}
- ],
+  {"full_text": "${time %e.%b}", "color": "\#ffe314"}
+  # {"full_text": "${battery_short} ${battery_percent} %", "color": "\#feffff"}
+],
