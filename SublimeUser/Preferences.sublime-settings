@@ -2,5 +2,9 @@
 	"ignored_packages":
 	[
 		"Vintage"
+	],
+	"ld_library_path_items":
+	[
+		"/usr/local/lib"
 	]
 }

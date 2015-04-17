@@ -1,6 +1,12 @@
 {
+	"in_process_packages":
+	[
+	],
 	"installed_packages":
 	[
-		"Package Control"
+		"LD library Path",
+		"Package Control",
+		"Rust",
+		"TOML"
 	]
 }
