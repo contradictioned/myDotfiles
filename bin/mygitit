@@ -1,5 +1,0 @@
-#!/bin/bash
-
-cd /srv/manu-wiki
-gitit &
-exit 0
