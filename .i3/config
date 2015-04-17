@@ -2,6 +2,9 @@
 set $mod Mod4
 
 
+### (1.2) Apps
+exec_always --no-startup-id nm-applet
+
 ### (2) Settings
 
 # font for window titles. ISO 10646 = Unicode
@@ -16,6 +19,9 @@ workspace_auto_back_and_forth yes
 # App <-> Workspace assignments
 assign [class="^Thunderbird$"] → 9
 assign [class="^Quasselclient$"] → 10
+
+# Floating for some programs
+for_window[class="Catfish"] floating enable
 
 # 
 force_display_urgency_hint 500 ms
@@ -153,6 +159,7 @@ bindsym Return mode "default"
 bindsym Escape mode "default"
 }
 
+bindsym $mod+Shift+p exec catfish
 bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
