@@ -13,7 +13,7 @@ function lft {
     return
   fi
   echo "+ creating link to $TO under $LINK"
-  ln -s "$TO" "$LINK"
+  ln -s `pwd`/"$TO" "$LINK"
 }
 
 lft bin ~/bin
@@ -24,6 +24,4 @@ lft vim ~/.vim
 lft .vimrc ~/.vimrc
 lft .Xdefaults ~/.Xdefaults
 lft .profile ~/.profile
-lft Package\ Control.sublime-settings "~/.config/sublime-text-3/Packages/User/Package\ Control.sublime-settings"
-lft Preferences.sublime-settings ~/.config/sublime-text-3/Packages/Preferences.sublime-settings
-
+lft SublimeUser ~/.config/sublime-text-3/Packages/User
