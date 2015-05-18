@@ -5,8 +5,10 @@
 	"installed_packages":
 	[
 		"LD library Path",
+		"Non Text Files",
 		"Package Control",
 		"Rust",
+		"RustAutoComplete",
 		"TOML"
 	]
 }

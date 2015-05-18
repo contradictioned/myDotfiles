@@ -1,4 +1,8 @@
 {
+	"added_words":
+	[
+		"Json"
+	],
 	"ignored_packages":
 	[
 		"Vintage"
