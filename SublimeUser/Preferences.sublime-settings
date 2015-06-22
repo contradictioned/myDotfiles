@@ -5,6 +5,7 @@
 	],
 	"ignored_packages":
 	[
+		"Markdown",
 		"Vintage"
 	],
 	"ld_library_path_items":

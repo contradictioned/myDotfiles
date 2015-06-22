@@ -4,7 +4,10 @@
 	],
 	"installed_packages":
 	[
+		"LaTeXTools",
 		"LD library Path",
+		"Markdown Preview",
+		"MarkdownEditing",
 		"Non Text Files",
 		"Package Control",
 		"Rust",
