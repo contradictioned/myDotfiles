@@ -12,7 +12,7 @@ URxvt*xftAntialias: true
 URxvt.saveLines: 10000
 URxvt.scrollBar: true
 URxvt.foreground: white
-URxvt.background: #2B2B2B
+URxvt.background: #2B2B21
 URxvt.secondaryScroll: true
 
 URxvt.perl-ext-common: mark-urls
@@ -32,5 +32,5 @@ URxvt.keysym.Shift-Control-V : perl:clipboard:paste
 URxvt.url-select.launcher: chromium
 URxvt.url-select.underline: true
 
-urxvt*depth: 32
-urxvt*background: rgba:0200/0200/0200/a000
+!urxvt*depth: 32
+!urxvt*background: rgba:0200/0200/0200/a000
