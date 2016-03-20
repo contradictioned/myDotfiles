@@ -5,14 +5,21 @@
 	],
 	"installed_packages":
 	[
+		"Elixir",
+		"Fix Mac Path",
+		"Jade",
 		"LaTeXTools",
 		"LD library Path",
 		"Markdown Preview",
 		"MarkdownEditing",
+		"nginx",
 		"Non Text Files",
 		"Package Control",
 		"Rust",
 		"RustAutoComplete",
+		"Sass",
+		"SublimeLinter",
+		"SublimeLinter-contrib-rustc",
 		"TOML"
 	]
 }
